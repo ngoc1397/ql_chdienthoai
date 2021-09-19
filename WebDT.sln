@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1267
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebDT", "WebDT\WebDT.csproj", "{C3663FC6-3B92-49C9-A820-5F1A036C82EB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{CC5FC07D-2BE8-479F-B7A1-D4B08E6E45CA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{C3663FC6-3B92-49C9-A820-5F1A036C82EB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C3663FC6-3B92-49C9-A820-5F1A036C82EB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C3663FC6-3B92-49C9-A820-5F1A036C82EB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C3663FC6-3B92-49C9-A820-5F1A036C82EB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CC5FC07D-2BE8-479F-B7A1-D4B08E6E45CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CC5FC07D-2BE8-479F-B7A1-D4B08E6E45CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CC5FC07D-2BE8-479F-B7A1-D4B08E6E45CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CC5FC07D-2BE8-479F-B7A1-D4B08E6E45CA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EF77A7C8-A683-499D-8F28-A19009A48269}
+	EndGlobalSection
+EndGlobal

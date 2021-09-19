@@ -1,0 +1,180 @@
+﻿
+@{
+    ViewBag.Title = "XemChiTiet";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Models.Framework
+@model ChiTietSanPham
+    <style>
+        table{
+            border:none
+        }
+        tr{
+            
+        }
+        td{
+            height:3rem;
+        }
+    </style>
+<div class="row" style="text-align:center;margin-top:0.8rem;margin-bottom:0.8rem;">
+    <h3 style="color:#151dfa">Thông số kĩ thuật của @Model.SanPham.tenSanpham</h3>
+    <table style="text-align:left;margin:auto auto;padding:0.5rem;" class="w-auto">
+        <tr style="border:none">
+            <td rowspan="50" style="text-align:right;vertical-align:top">
+                <img src="~/Assets/HinhSP/@Model.SanPham.anhSanpham" style="width:400px;height:460px"/>
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Tên sản phẩm: 
+            </td>
+            <td>
+                @Model.SanPham.tenSanpham
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Loại màn hình
+            </td>
+            <td>
+                @Model.loaiManhinh
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Độ rộng MH
+            </td>
+            <td>
+                @Model.doRong
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Độ phân giải: 
+            </td>
+            <td>
+                @Model.doPhangiai
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Camera sau:
+            </td>
+            <td>
+                @Model.cameraSau
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Tính năng camera:
+            </td>
+            <td>
+                @Model.tinhNangcamera
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Camera trước: 
+            </td>
+            <td>
+                @Model.cameraTruoc
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Hệ điều hành: 
+            </td>
+            <td>
+                @Model.HDH
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                CPU:
+            </td>
+            <td>
+                @Model.CPU
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                RAM: 
+            </td>
+            <td>
+                @Model.RAM
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                ROM:
+            </td>
+            <td>
+                @Model.ROM
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Mạng:
+            </td>
+            <td>
+                @Model.mang
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Sim:
+            </td>
+            <td>
+                @Model.sim
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Wifi:
+            </td>
+            <td>
+                @Model.wifi
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Bluetooth:
+            </td>
+            <td>
+                @Model.bluetooth
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Dung lượng pin:
+            </td>
+            <td>
+                @Model.dungLuongpin
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Kích thước:
+            </td>
+            <td>
+                @Model.kichThuoc
+            </td>
+        </tr>
+        <tr style="border-bottom:solid 1px #9c9c9c;">
+            <td style="font-weight:bold">
+                Trọng lượng:
+            </td>
+            <td>
+                @Model.trongLuong
+            </td>
+        </tr>
+        <tr>
+            <td style="text-align:center;">
+                <a href="@Url.Action("ThemGioHang","GioHang",new {@idSanpham=@Model.idSanpham,@URL = Request.Url.ToString()})" class="btn btn-danger" style="font-size:1rem;margin-top:10px">Mua ngay</a>
+            </td>
+            <td>
+                <a href="@Url.Action("Index","Home")" class="btn btn-primary" style="margin-top:10px">Tiếp tục mua sắm</a>
+            </td>
+        </tr>
+    </table>
+</div>

@@ -1,0 +1,85 @@
+﻿
+@{
+    ViewBag.Title = "DangKy";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@model Models.Framework.NguoiDung
+<style>
+    .login-form {
+        width: 340px;
+        margin: 0px auto;
+        font-size: 15px;
+    }
+
+        .login-form form {
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        .login-form h2 {
+            margin: 0 0 15px;
+        }
+
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
+<div style="height:800px;background-image:url(/Image/2552637.jpg);background-size:cover;margin-top:0rem;padding-top:20px">
+    <div style="font-weight:bold">
+        <h2 style="text-align:center">Đăng kí thành viên</h2>
+        <table class="table" border="0">
+            @using (Html.BeginForm())
+            {
+                @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+                {
+                    <tr>
+                        <td style="text-align:right;width:200px">Họ tên</td>
+                        <td style="width:400px">@Html.TextBox("HoTen", "", new { @class = "form-control" }) @ViewData["Loi1"] </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">Tên đăng nhập</td>
+                        <td style="width:400px">@Html.TextBox("TenDN", "", new { @class = "form-control" }) @ViewData["Loi2"] <span style="color:red">@ViewData["Loi6"]</span></td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">Mật khẩu</td>
+                        <td style="width:400px">@Html.Password("MatKhau", "", new { @class = "form-control" }) @ViewData["Loi3"]</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">Nhập lại mật khẩu</td>
+                        <td style="width:400px">@Html.Password("ReMatKhau", "", new { @class = "form-control" }) @ViewData["Loi4"]</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">Điện thoại</td>
+                        <td>@Html.TextBox("DienThoai", "", new { @class = "form-control" }) @ViewData["Loi5"]</td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">Email</td>
+                        <td style="width:400px">
+                            <input type="text" name="Email" class="form-control" style="width:100%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td style="text-align:right">Địa chỉ</td>
+                        <td style="width:400px">
+                            <input type="text" name="DiaChi" class="form-control" style="width:100%" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align:center">
+                            <input type="submit" class="btn btn-primary" value="Đăng Ký" />
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    </div>
+</div>

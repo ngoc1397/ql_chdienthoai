@@ -1,0 +1,361 @@
+﻿<Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.props" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" />
+  <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{C3663FC6-3B92-49C9-A820-5F1A036C82EB}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>WebDT</RootNamespace>
+    <AssemblyName>WebDT</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <UseIISExpress>true</UseIISExpress>
+    <Use64BitIISExpress />
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <UseGlobalApplicationHostFile />
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.4.4\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="System.Web.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.4\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Deployment">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Webpages.Razor">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Webpages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Helpers">
+      <HintPath>..\packages\Microsoft.AspNet.Webpages.3.2.4\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Infrastructure">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc">
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.4\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Assets\AnhTinTuc\applecar.jpg" />
+    <Content Include="Assets\AnhTinTuc\battleprimeonline.jpg" />
+    <Content Include="Assets\AnhTinTuc\danhgia_galaxys20.jpg" />
+    <Content Include="Assets\AnhTinTuc\danhgia_iphoneSE.jpg" />
+    <Content Include="Assets\AnhTinTuc\galaxys21_tindon.jpg" />
+    <Content Include="Assets\AnhTinTuc\khuyenmai_noel.jpg" />
+    <Content Include="Assets\AnhTinTuc\KMTungbungNoel2020.jpg" />
+    <Content Include="Assets\AnhTinTuc\meohay_zalo.jpg" />
+    <Content Include="Assets\AnhTinTuc\pubg.jpg" />
+    <Content Include="Assets\AnhTinTuc\TetSale.jpg" />
+    <Content Include="Assets\AnhTinTuc\Top_Game2020.jpg" />
+    <Content Include="Assets\AnhTinTuc\vsmartjoy_Giamgia.jpg" />
+    <Content Include="Assets\css\bootstrap-grid.css" />
+    <Content Include="Assets\css\bootstrap-grid.min.css" />
+    <Content Include="Assets\css\bootstrap-reboot.css" />
+    <Content Include="Assets\css\bootstrap-reboot.min.css" />
+    <Content Include="Assets\css\bootstrap-utilities.css" />
+    <Content Include="Assets\css\bootstrap-utilities.min.css" />
+    <Content Include="Assets\css\bootstrap.css" />
+    <Content Include="Assets\css\bootstrap.min.css" />
+    <Content Include="Assets\css\linkbox.css" />
+    <Content Include="Assets\css\linkbox.js" />
+    <Content Include="Assets\css\PagedList.css" />
+    <Content Include="Assets\HinhSP\galaxyA11.jpg" />
+    <Content Include="Assets\HinhSP\galaxyA21s.jpg" />
+    <Content Include="Assets\HinhSP\galaxyA31.jpg" />
+    <Content Include="Assets\HinhSP\galaxya50s.jpg" />
+    <Content Include="Assets\HinhSP\galaxya51.jpg" />
+    <Content Include="Assets\HinhSP\galaxya70.jpg" />
+    <Content Include="Assets\HinhSP\galaxynote20ultra5g.jpg" />
+    <Content Include="Assets\HinhSP\iphone-12-mini-128gb.jpg" />
+    <Content Include="Assets\HinhSP\iphone-se-64gb-2020.jpg" />
+    <Content Include="Assets\HinhSP\iphone-xs-gold.jpg" />
+    <Content Include="Assets\HinhSP\iPhone11-yellow.jpg" />
+    <Content Include="Assets\HinhSP\iphone11.jpg" />
+    <Content Include="Assets\HinhSP\iphone11promax.jpg" />
+    <Content Include="Assets\HinhSP\iPhone12-blue.jpg" />
+    <Content Include="Assets\HinhSP\iPhone12-white.png" />
+    <Content Include="Assets\HinhSP\iPhone12pro-black.jpg" />
+    <Content Include="Assets\HinhSP\iPhone12pro-yellow.jpg" />
+    <Content Include="Assets\HinhSP\iPhone7-black.jpg" />
+    <Content Include="Assets\HinhSP\iPhone7-yellow.jpg" />
+    <Content Include="Assets\HinhSP\iPhone7.png" />
+    <Content Include="Assets\HinhSP\iPhone8-yellow.jpg" />
+    <Content Include="Assets\HinhSP\iphone8.png" />
+    <Content Include="Assets\HinhSP\iphone8plus.png" />
+    <Content Include="Assets\HinhSP\iPhoneSe-black.jpg" />
+    <Content Include="Assets\HinhSP\iphonex.jpg" />
+    <Content Include="Assets\HinhSP\iPhoneXs-yellow.jpg" />
+    <Content Include="Assets\HinhSP\iphonexsmax.png" />
+    <Content Include="Assets\HinhSP\nokia-215.jpg" />
+    <Content Include="Assets\HinhSP\nokia-24.jpg" />
+    <Content Include="Assets\HinhSP\nokia-34.jpg" />
+    <Content Include="Assets\HinhSP\nokia-53.jpg" />
+    <Content Include="Assets\HinhSP\nokia-6300-4g.jpg" />
+    <Content Include="Assets\HinhSP\nokia-8000-4g.jpg" />
+    <Content Include="Assets\HinhSP\nokia-83.jpg" />
+    <Content Include="Assets\HinhSP\nokia-c2.jpg" />
+    <Content Include="Assets\HinhSP\oppo-a12.jpg" />
+    <Content Include="Assets\HinhSP\oppo-a53-2020.jpg" />
+    <Content Include="Assets\HinhSP\oppo-a92.jpg" />
+    <Content Include="Assets\HinhSP\oppo-a93.jpg" />
+    <Content Include="Assets\HinhSP\oppo-find-x2.jpg" />
+    <Content Include="Assets\HinhSP\oppo-reno3-pro.jpg" />
+    <Content Include="Assets\HinhSP\oppo-reno4-pro.jpg" />
+    <Content Include="Assets\HinhSP\oppo-reno4.jpg" />
+    <Content Include="Assets\HinhSP\OppoA31.jpg" />
+    <Content Include="Assets\HinhSP\oppoA31.png" />
+    <Content Include="Assets\HinhSP\samsungs20.jpg" />
+    <Content Include="Assets\HinhSP\vivo-u10.jpg" />
+    <Content Include="Assets\HinhSP\vivo-v19.jpg" />
+    <Content Include="Assets\HinhSP\vivo-v20-se.jpg" />
+    <Content Include="Assets\HinhSP\vivo-v20.jpg" />
+    <Content Include="Assets\HinhSP\vivo-y11.jpg" />
+    <Content Include="Assets\HinhSP\vivo-y19.jpg" />
+    <Content Include="Assets\HinhSP\vivo-y20.jpg" />
+    <Content Include="Assets\HinhSP\vivo-y20s.jpg" />
+    <Content Include="Assets\HinhSP\vsmart-active-3-6gb.jpg" />
+    <Content Include="Assets\HinhSP\vsmart-aris-pro.jpg" />
+    <Content Include="Assets\HinhSP\vsmart-aris.jpg" />
+    <Content Include="Assets\HinhSP\vsmart-bee-3.jpg" />
+    <Content Include="Assets\HinhSP\vsmart-joy-3-4gb.jpg" />
+    <Content Include="Assets\HinhSP\vsmart-joy-4-3gb.jpg" />
+    <Content Include="Assets\HinhSP\vsmart-joy-4.jpg" />
+    <Content Include="Assets\HinhSP\vsmart-star-3.jpg" />
+    <Content Include="Assets\HinhSP\xiaomimi10tpro.jpg" />
+    <Content Include="Assets\HinhSP\xiaomipocox3nfc.jpg" />
+    <Content Include="Assets\HinhSP\xiaomiredmi9.jpg" />
+    <Content Include="Assets\HinhSP\xiaomiredmi9a.jpg" />
+    <Content Include="Assets\HinhSP\xiaomiredminote8.jpg" />
+    <Content Include="Assets\HinhSP\xiaomiredminote9.jpg" />
+    <Content Include="Assets\HinhSP\xiaomiredminote9pro.jpg" />
+    <Content Include="Assets\HinhSP\xiaomiredminote9s.jpg" />
+    <Content Include="Assets\Image\2552637.jpg" />
+    <Content Include="Assets\Image\add-64.png" />
+    <Content Include="Assets\Image\apple-64.png" />
+    <Content Include="Assets\Image\apple.png" />
+    <Content Include="Assets\Image\cart-64.png" />
+    <Content Include="Assets\Image\cart-69-128.png" />
+    <Content Include="Assets\Image\list-ingredients-64.png" />
+    <Content Include="Assets\Image\login-64.png" />
+    <Content Include="Assets\Image\login-icon-3060.png" />
+    <Content Include="Assets\Image\plus.png" />
+    <Content Include="Assets\Image\qc1.PNG" />
+    <Content Include="Assets\Image\qc2.PNG" />
+    <Content Include="Assets\Image\qc3.PNG" />
+    <Content Include="Assets\Image\qc4.PNG" />
+    <Content Include="Assets\Image\qc5.PNG" />
+    <Content Include="Assets\Image\qc6.PNG" />
+    <Content Include="Assets\Image\samsung-64.png" />
+    <Content Include="Assets\Image\search-3-64.png" />
+    <Content Include="Assets\Image\smart-phone.png" />
+    <Content Include="Assets\Image\xiaomi.png" />
+    <Content Include="Assets\js\bootstrap.bundle.js" />
+    <Content Include="Assets\js\bootstrap.bundle.min.js" />
+    <Content Include="Assets\js\bootstrap.esm.js" />
+    <Content Include="Assets\js\bootstrap.esm.min.js" />
+    <Content Include="Assets\js\bootstrap.js" />
+    <Content Include="Assets\js\bootstrap.min.js" />
+    <Content Include="Content\PagedList.css" />
+    <Content Include="Global.asax" />
+    <Content Include="Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Code\SessionHelper.cs" />
+    <Compile Include="Areas\Admin\Code\UserSession.cs" />
+    <Compile Include="Areas\Admin\Controllers\AdSanPhamController.cs" />
+    <Compile Include="Areas\Admin\Controllers\BaseController.cs" />
+    <Compile Include="Areas\Admin\Controllers\CanhBaoController.cs" />
+    <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Models\LoginModel.cs" />
+    <Compile Include="Common\CommonConstant.cs" />
+    <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\ClientLoginController.cs" />
+    <Compile Include="Controllers\GioHangController.cs" />
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\SanPhamController.cs" />
+    <Compile Include="Controllers\TinTucController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\web.config" />
+    <Content Include="Areas\Admin\Views\web.config" />
+    <Content Include="Assets\css\bootstrap-grid.css.map" />
+    <Content Include="Assets\css\bootstrap-grid.min.css.map" />
+    <Content Include="Assets\css\bootstrap-reboot.css.map" />
+    <Content Include="Assets\css\bootstrap-reboot.min.css.map" />
+    <Content Include="Assets\css\bootstrap-utilities.css.map" />
+    <Content Include="Assets\css\bootstrap-utilities.min.css.map" />
+    <Content Include="Assets\css\bootstrap.css.map" />
+    <Content Include="Assets\css\bootstrap.min.css.map" />
+    <Content Include="Assets\js\bootstrap.bundle.js.map" />
+    <Content Include="Assets\js\bootstrap.bundle.min.js.map" />
+    <Content Include="Assets\js\bootstrap.esm.js.map" />
+    <Content Include="Assets\js\bootstrap.esm.min.js.map" />
+    <Content Include="Assets\js\bootstrap.js.map" />
+    <Content Include="Assets\js\bootstrap.min.js.map" />
+    <Content Include="Areas\Admin\Views\Login\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Home\Test.cshtml" />
+    <Content Include="Areas\Admin\Views\Shared\_Layout.cshtml" />
+    <Content Include="Areas\Admin\Views\AdSanPham\ThemMoiSanPham.cshtml" />
+    <Content Include="Areas\Admin\Views\AdSanPham\ShowSanPham.cshtml" />
+    <Content Include="Areas\Admin\Views\AdSanPham\ThemChiTietSanPham.cshtml" />
+    <Content Include="Areas\Admin\Views\AdSanPham\ThemHang.cshtml" />
+    <Content Include="Areas\Admin\Views\CanhBao\ThongBao.cshtml" />
+    <Content Include="Areas\Admin\Views\AdSanPham\CapNhatSanPham.cshtml" />
+    <Content Include="Areas\Admin\Views\AdSanPham\CapNhatCTSanPham.cshtml" />
+    <None Include="packages.config" />
+    <Content Include="Views\Home\Index2.cshtml" />
+    <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\SanPham\XemChiTiet.cshtml" />
+    <Content Include="Views\SanPham\lay7SpSamSung.cshtml" />
+    <Content Include="Views\ClientLogin\DangNhap.cshtml" />
+    <Content Include="Views\SanPham\SamSung.cshtml" />
+    <Content Include="Views\SanPham\Apple.cshtml" />
+    <Content Include="Views\SanPham\Xiaomi.cshtml" />
+    <Content Include="Views\SanPham\TimKiem.cshtml" />
+    <Content Include="Views\SanPham\DanhSachHang.cshtml" />
+    <Content Include="Views\TinTuc\LoaiTinPartial.cshtml" />
+    <Content Include="Views\SanPham\SPTheoHang.cshtml" />
+    <Content Include="Views\GioHang\XemGioHang.cshtml" />
+    <Content Include="Views\GioHang\ThongBaoThanhCong.cshtml" />
+    <Content Include="Views\ClientLogin\DangKy.cshtml" />
+    <Content Include="Views\GioHang\GioHangPartial.cshtml" />
+    <Content Include="Views\TinTuc\TinTucTheoLoaiTin.cshtml" />
+    <Content Include="Views\TinTuc\XemChiTietTin.cshtml" />
+    <Content Include="Views\GioHang\DangNhapPartial.cshtml" />
+    <None Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+    <None Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Areas\Admin\Views\Base\" />
+    <Folder Include="Models\" />
+    <Folder Include="Views\Login\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{cc5fc07d-2be8-479f-b7a1-d4b08e6e45ca}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>25641</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:25641/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.0\build\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.props'))" />
+    <Error Condition="!Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\EntityFramework.6.4.4\build\EntityFramework.targets'))" />
+  </Target>
+  <Import Project="..\packages\EntityFramework.6.4.4\build\EntityFramework.targets" Condition="Exists('..\packages\EntityFramework.6.4.4\build\EntityFramework.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

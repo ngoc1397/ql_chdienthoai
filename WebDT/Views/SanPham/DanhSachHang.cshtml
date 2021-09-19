@@ -1,0 +1,18 @@
+﻿
+@{
+    Layout = null;
+}
+@using Models.Framework
+@model List<Hang>
+<ul class="list-group list-group-flush text-left">
+    <li class="list-group-item" style="background-color:#0325a8;"><a href="#" style="text-transform:none;color:white;font-weight:bold">Hãng Điện Thoại</a></li>
+    @{
+        foreach (var item in Model)
+        {
+            <li class="list-group-item">
+                <a href="@Url.Action("SPTheoHang", "SanPham", new { @idHang = item.idHang})" style="text-transform:uppercase; text-decoration:none;">@item.tenHang</a>
+            </li>
+        }
+        <li class="list-group-item"><a href="#" style="text-transform:uppercase;text-decoration:none"></a></li>
+    }
+</ul>

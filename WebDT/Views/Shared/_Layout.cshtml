@@ -1,0 +1,187 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>H2Nmobile.com</title>
+    <style>
+        html {
+            font-size: 16px;
+        }
+    </style>
+    <link rel="stylesheet" type="text/css" href="~/Assets/css/bootstrap.css" />
+    <script src="~/Assets/js/bootstrap.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js"></script>
+</head>
+<body>
+    <div class="container-fluid" style="color:white;">
+        <div class="row" style="height:2rem; background-color:#2f2f2f;text-align:center;">
+            <div class="col-md-3" style="margin: auto auto">
+                <span>Đổi trả<span style="color:red">14</span>ngày</span>
+            </div>
+            <div class="col-md-3" style="margin: auto auto">
+                <span>Hotline: 033 8016 618(Zalo)</span>
+            </div>
+            <div class="col-md-6" style="margin: auto auto">
+                <span style="margin-right:0.5rem"><a href="#" style="text-decoration:none; color:white;font-size:0.9rem">CHÍNH SÁCH BẢO HÀNH</a></span>
+                <span style="margin-right:0.5rem"><a href="#" style="text-decoration:none; color:white;font-size:0.9rem">MUA TRẢ GÓP</a></span>
+                <span style="margin-right:0.5rem"><a href="#" style="text-decoration:none; color:white;font-size:0.9rem">THU CŨ ĐỔI MỚI</a></span>
+                <span style="margin-right:0.5rem"><a href="#" style="text-decoration:none; color:white;font-size:0.9rem">TIN CÔNG NGHỆ</a></span>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid">
+        <div class="row" style="height:4rem;background-color:#c10000">
+            <div class="col-md-3" style="color:white; margin:auto auto;text-align:center">
+                <a href="/Home/Index" style="text-decoration:none">
+                    <img src="~/Assets/Image/logo.png"style="height:3rem"/>
+                </a>
+            </div>
+            <div class="col-md-6" style="text-align:center">
+                <ul class="nav">
+                    <li class="nav-item" style="text-align:center">
+                        <a class="nav-link" href="@Url.Action("Apple","SanPham")" style="color:white">
+                            <img src="~/Assets/Image/apple-64.png" style="width:1.8rem; height:1.8rem" /><br />
+                            Apple
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("SamSung","SanPham")" style="color:white">
+                            <img src="~/Assets/Image/smart-phone.png" style="width:1.8rem; height:1.8rem" /><br />
+                            Samsung
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("Xiaomi","SanPham")" style="color:white">
+                            <img src="~/Assets/Image/xiaomi.png" style="width:1.8rem; height:1.8rem" /><br />
+                            Xiaomi
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("DangNhap","ClientLogin")" style="color:white">
+                            <img src="~/Assets/Image/login-64.png" style="width:1.8rem; height:1.8rem" /><br />
+                            Đăng nhập
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("TimKiem","SanPham")" style="color:white">
+                            <img src="~/Assets/Image/search-3-64.png" style="width:1.8rem; height:1.8rem" /><br />
+                            Tìm kiếm
+                        </a>
+                    </li>
+                    <li class="nav-item" style="color:white;padding-top:9px">
+                        @Html.Action("GioHangPartial", "GioHang")
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="@Url.Action("DangKy","ClientLogin")" style="color:white">
+                            <img src="~/Assets/Image/login-64.png" style="width:1.8rem; height:1.8rem" /><br />
+                            Đăng ký
+                        </a>
+                    </li>
+                    <li class="nav-item" style="color:white;padding-top:9px">
+                        @Html.Action("DangNhapPartial", "GioHang")
+                    </li>
+                </ul>
+            </div>
+            <div class="col-md-3" style="text-align:left;margin:auto auto">
+                <form class="d-flex">
+
+                    <input class="form-control mr-2 h-25" type="search" placeholder="Tìm kiếm" aria-label="Search">
+                    <button class="btn h-50" type="submit"><img src="~/Assets/Image/search-3-64.png" style="width:25px;height:25px" /></button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <div class="container-fluid" style="height:auto;width:92%">
+        <div class="row" style="margin:0px;margin-top:10px">
+            <div class="col-md-2">
+                @Html.Action("DanhSachHang","SanPham")
+                @Html.Action("LoaiTinPartial","TinTuc")
+            </div>
+            <div class="col-md-10">
+                @RenderBody()
+            </div>
+        </div>
+        
+    </div>
+    <div class="container-fluid" style="margin-top:10px">
+        <div class="row" style="background-color:#e8e8e8;height:100px">
+            <div class="col-md-6" style="text-align:right;margin:auto auto">
+                <span style="font-weight:bold">TỔNG ĐÀI 24/7</span><br />
+                <span>(8h00 đến 21h30 tất cả các ngày trong tuần)</span>
+            </div>
+            <div class="col-md-6" style="text-align:left;margin:auto auto;font-size:40px">
+                <span style="color:blue">(+84) 033 8016 618</span>
+            </div>
+        </div>
+        <div class="row" style="background-color:#efeded;border-top:1px solid red;height:auto;padding:10px">
+            <div class="col-md-6" style="text-align:center">
+                <table style="float:right;">
+                    <tr>
+                        <td style="font-weight:bold">Hệ thống cửa hàng H2N mobile</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-weight:bold">Q.Tân Phú</span>
+                            140 Lê Trọng Tấn, P.Tây Thạnh, Q.Tân Phú,TP.HCM
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-weight:bold">Q.Tân Phú</span>
+                            30/52 Đỗ Nhuận, P.Sơn kỳ, Q.Tân Phú,TP.HCM
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-weight:bold">Q.Tân Bình</span>
+                            162 Trường Chinh, P.12, Q.Tân Bình,TP.HCM
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <div class="col-md-6" style="text-align:center">
+                <table style="float:left">
+                    <tr>
+                        <td style="font-weight:bold">Hệ thống cửa hàng H2N mobile</td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-weight:bold">Q.6</span>
+                            31 Bình Phú, P.10, Quận 6, TP.HCM
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-weight:bold">Q.Tân Phú</span>
+                            18B-19B, 32A, P.10, Quận 6, TP.HCM
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <span style="font-weight:bold">Q.Tân Bình</span>
+                            999 Lũy Bán Bích, P.Tân Quý, Q.Tân Phú, TP.HCM
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="row" style="background-color:#151515;text-align:center;color:white">
+            <span>
+                Copyright © 2018 H2N Mobile GPKD 41X8032798 UBNN Quận Tân Phú cấp ngày 28/5/2018 , Inc. All rights reserved
+            </span><br />
+            <span>
+                140 Lê Trọng Tấn, P.Tây Thạnh, Q.Tân Phú, Tp.HCM - 033 8016 618 (Zalo) - thengoc828@gmail.com
+            </span>
+        </div>
+    </div>
+</body>
+</html>

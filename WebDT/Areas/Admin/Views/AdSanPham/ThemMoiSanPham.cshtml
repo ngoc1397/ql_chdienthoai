@@ -1,0 +1,45 @@
+﻿
+@{
+    ViewBag.Title = "ThemMoiSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@using Models.Framework
+@model SanPham
+<div class="w-50" style="margin:1.5rem auto">
+    @using (Html.BeginForm())
+    {
+        <div style="text-align:center; color:#b60505">
+            <h3>Thêm mới sản phẩm</h3>
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label" style="font-weight:bold;color:#0005a0;font-size:1.2rem">Hãng sản xuất</label>
+            @Html.DropDownListFor(Model => Model.idHang, new List<SelectListItem>()
+            {
+                new SelectListItem(){Selected = true,Text = "Samsung", Value = "1"},
+                new SelectListItem(){Selected = false,Text="Apple",Value="2"},
+                new SelectListItem(){Selected = false,Text="Xiaomi",Value="3"},
+                new SelectListItem(){Selected = false,Text="Realme",Value="4"},
+                new SelectListItem(){Selected = false,Text="Oppo",Value="5"},
+                new SelectListItem(){Selected = false,Text="Vivo",Value="6"},
+                new SelectListItem(){Selected = false,Text="Vsmart",Value="7"},
+                new SelectListItem(){Selected = false,Text="Nokia",Value="8"}
+            }, new { @class = "form-control" })
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label" style="font-weight:bold;color:#0005a0;font-size:1.2rem">Tên sản phẩm</label>
+            @Html.TextBoxFor(model => model.tenSanpham, new { @class = "form-control" })
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label" style="font-weight:bold;color:#0005a0;font-size:1.2rem">Ảnh sản phẩm</label>
+            @Html.TextBoxFor(model => model.anhSanpham, new { @class = "form-control", type = "file", name="anhSanpham"})
+            @Html.ValidationMessageFor(model => model.anhSanpham)
+        </div>
+        <div class="mb-3">
+            <label for="" class="form-label" style="font-weight:bold;color:#0005a0;font-size:1.2rem">Giá sản phẩm</label>
+            @Html.TextBoxFor(model => model.giaSanpham, new { @class = "form-control", type = "number" })
+        </div>
+        <div>
+            <input type="submit" class="btn btn-danger" value="Thêm sản phẩm" />
+        </div>
+    }
+</div>

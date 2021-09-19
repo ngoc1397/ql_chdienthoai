@@ -1,0 +1,19 @@
+﻿
+@{
+    
+    Layout = null;
+}
+@using Models.Framework
+@model List<SanPham>
+<div class="row">
+    @foreach (var item in Model)
+    {
+    <div class="col">
+        <a href="@Url.Action("XemChiTiet","SanPham",new {@idSanpham=item.idSanpham})" style="">
+            <input type="button" class="btn" value="@item.tenSanpham" style="color:red;height:2.5rem;background-color:#ebebeb;font-size:1rem;margin-right:5px;" />
+        </a>
+    </div>
+    }
+</div>
+
+

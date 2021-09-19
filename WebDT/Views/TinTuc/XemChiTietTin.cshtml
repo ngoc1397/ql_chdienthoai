@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "Xem chi tiết tin";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Models.Framework
+@model TinTuc
+<div class="row" style="text-align:center;margin-top:0.8rem;margin-bottom:0.8rem;">
+    <h3 style="color:#151dfa"> @Model.tieuDe</h3>
+    <img src="~/Assets/AnhTinTuc/@Model.anhBia" style="" />
+    <h4 style="">Nội dung @Model.noiDung</h4>
+</div>

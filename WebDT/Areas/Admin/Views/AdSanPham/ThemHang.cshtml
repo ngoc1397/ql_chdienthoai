@@ -1,0 +1,29 @@
+﻿@model Models.Framework.Hang
+
+@{
+    ViewBag.Title = "ThemHang";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm()) 
+{
+    @Html.AntiForgeryToken()
+    <div class="form-horizontal col-md-6" style="height:500px;margin: 2rem auto">
+        <h2 style="text-align:center;color:darkred">Thêm hãng</h2>
+        <hr />
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            <label style="color:darkblue;font-size:1.5rem">Tên hãng</label>
+            <div class="col-md-12">
+                @Html.EditorFor(model => model.tenHang, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.tenHang, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group" style="text-align:center">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Thêm" class="btn btn-danger" style="width:6rem" />
+            </div>
+        </div>
+    </div>
+}

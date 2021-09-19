@@ -1,0 +1,64 @@
+﻿
+@{
+    ViewBag.Title = "DangNhap";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@model WebDT.Areas.Admin.Models.LoginModel
+<style>
+    .login-form {
+        width: 340px;
+        margin: 0px auto;
+        font-size: 15px;
+    }
+
+        .login-form form {
+            margin-bottom: 15px;
+            background: #f7f7f7;
+            box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
+            padding: 30px;
+        }
+
+        .login-form h2 {
+            margin: 0 0 15px;
+        }
+
+    .form-control, .btn {
+        min-height: 38px;
+        border-radius: 2px;
+    }
+
+    .btn {
+        font-size: 15px;
+        font-weight: bold;
+    }
+</style>
+<div style="height:800px;background-image:url(/Assets/Image/2552637.jpg);background-size:cover;margin-top:0rem;padding-top:120px">
+    <div class="login-form" style="border: 1px solid #de0404;border-bottom:none;opacity:0.9;">
+        @using (Html.BeginForm(new { @method = "post" }))
+        {
+            <div class="form-group" style="text-align:center">
+                <h3 style="color:darkblue">Đăng nhập</h3>
+            </div>
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+            <div class="form-group">
+                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "Tên đăng nhập", @required = "required" })
+            </div>
+            <div class="form-group">
+                @Html.PasswordFor(model => model.PassWord, new { @class = "form-control", @placeholder = "Mật khẩu", @required = "required" })
+            </div>
+            <div class="form-group" style="text-align:center">
+                <button type="submit" class="btn btn-danger btn-block">Đăng nhập</button>
+            </div>
+            <div class="clearfix" style="margin-top:2rem;">
+                <label class="float-left form-check-label">
+                    @Html.CheckBoxFor(model => model.RememberMe, new { @class = "" })
+                    Remember me
+                </label>
+                <a href="#" class="float-right">Quên mật khẩu?</a>
+            </div>
+        }
+    </div>
+</div>
+
+

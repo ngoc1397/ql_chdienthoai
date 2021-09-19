@@ -1,0 +1,43 @@
+﻿
+@{
+    ViewBag.Title = "Xiaomi";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Models.Framework
+@model List<SanPham>
+<div class="row" style="margin-top:0rem">
+    <div class="col-md-6" style="padding:0px;padding-right:5px">
+        <img src="~/Assets/Image/qc_ip1.png" style="width:100%" />
+    </div>
+    <div class="col-md-6" style="padding:0px;padding-left:5px">
+        <img src="~/Assets/Image/qc_ip2.png" style="width:100%" />
+    </div>
+</div>
+<div class="row" style="text-align:center;margin-top:1rem">
+    <h3>
+        Xiaomi
+    </h3>
+    <hr />
+    <div class="col-md-12">
+        <span style="color:red;font-weight:bold">>> </span><span>Mua điện thại Xiaomi - Giao hàng nhanh chóng - Thanh toán tiền mặt/visa/trả góp - Trải nghiệm sản phẩm thoải mái - Hỗ trợ bảo hành</span><span style="font-weight:bold;color:red"> <<</span>
+    </div>
+</div>
+<div class="row" style="margin-top:1rem">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width:224px;height:320px;font-size:1rem;margin-right:3px;margin-bottom:5px">
+            <img src="~/Assets/HinhSP/@item.anhSanpham" class="card-img-top" alt="Hình" style="width:160px;height:140px;margin:10px auto">
+            <div class="card-body">
+                <h6 class="card-title">@item.tenSanpham</h6>
+                <h6 class="card-title" style="color:orangered">@string.Format("{0:0,00} Đ", @item.giaSanpham)</h6>
+                <a href="@Url.Action("ThemGioHang","GioHang",new {@idSanpham=@item.idSanpham,@URL = Request.Url.ToString()})" class="btn btn-danger" style="font-size:1rem">Mua</a>
+                <a href="@Url.Action("XemChiTiet","SanPham",new {@idSanpham=@item.idSanpham})">
+                    <input type="submit" class="btn btn-warning" value="Chi tiết" style="color:white;font-weight:bold" />
+                </a>
+            </div>
+        </div>
+    }
+</div>
+
+
+

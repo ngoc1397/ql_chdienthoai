@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Tin tức theo loại";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@using Models.Framework
+@model List<TinTuc>
+<div class="row" style="margin-top:0rem">
+    <div class="col-md-6" style="padding:0px;padding-right:5px">
+        <img src="~/Assets/Image/qc_ip1.png" style="width:100%" />
+    </div>
+    <div class="col-md-6" style="padding:0px;padding-left:5px">
+        <img src="~/Assets/Image/qc_ip2.png" style="width:100%" />
+    </div>
+</div>
+<div class="row" style="margin-top:1rem">
+    @foreach (var item in Model)
+    {
+        <div class="card" style="width:210px;height:320px;font-size:1rem;margin-right:3px;margin-bottom:5px">
+            <img src="~/Assets/AnhTinTuc/@item.anhBia" class="card-img-top" alt="Hình" style="width:160px;height:140px;margin:10px auto">
+            <div class="card-body">
+                <h6 class="card-title">@item.tieuDe</h6>
+                <a href="@Url.Action("XemChiTietTin","TinTuc",new {@idTin=@item.idTin})">
+                    <input type="submit" class="btn btn-warning" value="Chi tiết" style="color:white;font-weight:bold" />
+                </a>
+            </div>
+        </div>
+    }
+</div>

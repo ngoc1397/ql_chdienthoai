@@ -1,0 +1,168 @@
+﻿@model Models.Framework.ChiTietSanPham
+
+@{
+    ViewBag.Title = "ThemChiTietSanPham";
+    Layout = "~/Areas/Admin/Views/Shared/_Layout.cshtml";
+}
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <div class="" style="text-align:center;color:orangered;margin-top:1rem">
+        <h2>Cập nhật chi tiết sản phẩm</h2>
+    </div>
+    @Html.ValidationSummary(true, null, new { @class = "alert alert-danger" })
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem;" class="col-md-3">Loại màn hình</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.loaiManhinh, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.loaiManhinh, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Độ rộng màn hình</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.doRong, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.doRong, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Độ phân giải màn hình</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.doPhangiai, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.doPhangiai, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Camera sau</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.cameraSau, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.cameraSau, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Tính năng camera sau</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.tinhNangcamera, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.tinhNangcamera, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Camera trước</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.cameraTruoc, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.cameraTruoc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Hệ điều hành</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.HDH, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.HDH, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Loại CPU</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.CPU, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.CPU, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Dung lượng RAM</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.RAM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.RAM, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Dung lượng bộ nhớ trong</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.ROM, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.ROM, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Mạng</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.mang, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.mang, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Sim</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.sim, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.sim, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Wi-fi</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.wifi, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.wifi, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Bluetooth</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.bluetooth, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.bluetooth, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Màn hình</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.dungLuongpin, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.dungLuongpin, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Kích thước</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.kichThuoc, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.kichThuoc, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Trọng lượng</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.trongLuong, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.trongLuong, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="row" style="margin-bottom:1rem">
+        <label style="color:#0005a0;font-size:1.5rem" class="col-md-3">Mô tả</label>
+        <div class="col-md-9">
+            @Html.EditorFor(model => model.mota, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.mota, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div style="margin-bottom:1rem;text-align:center">
+        <input type="submit" value="Thêm chi tiết" class="btn btn-danger" style="width:10rem" />
+    </div>
+}
+
+<div style="margin-bottom:10px">
+    <a href="@Url.Action("ShowSanPham","AdSanPham")" class="btn btn-primary">Quay về trang sản phẩm</a>
+</div>
+
+
